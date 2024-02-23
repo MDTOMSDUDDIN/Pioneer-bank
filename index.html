@@ -33,7 +33,7 @@
         <div class="col-md-4 ">
             <div class="withdrow status">
                 <h5>Withdrow</h5>
-            <h3>$00</h3>
+            <h3>$ <span id="currentWithdrow">00</span></h3>
             </div>
         </div>
         <div class="col-md-4" >
@@ -95,7 +95,12 @@ document.getElementById("depositAmount").value ="";
 const withdrowBtn=document.getElementById("addWithdrow");
 withdrowBtn.addEventListener("click", function(){
     const withdrowNumber=getInputNumber("withdrowAmount");
-console.log(withdrowNumber);
+
+    updateSpanText("currentWithdrow",withdrowNumber);
+    updateSpanText("currentBalance", -1*withdrowNumber)
+    
+
+document.getElementById("withdrowAmount").value="";
 })
 
 // withdrow function strating here
